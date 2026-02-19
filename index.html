@@ -57,7 +57,7 @@
       padding:8px 10px;
       border-radius:999px;
     }
-    nav a:hover{background:var(--soft)}
+    nav a:hover{background:var(--soft)}    
     .hero{
       background: radial-gradient(1200px 500px at 20% -10%, #dbeafe 0, rgba(219,234,254,0) 60%),
                   radial-gradient(900px 450px at 90% 0%, #fee2e2 0, rgba(254,226,226,0) 55%),
@@ -184,6 +184,33 @@
       border:1px solid var(--line);
       font-weight:700;
       font-size:12px;
+    }
+    body{ position:relative; }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image: url("assets/logo.jpg");
+      background-repeat:no-repeat;
+      background-position: 90% 20%;
+      background-size: min(650px, 70vw);
+      opacity:0.05;
+      pointer-events:none;
+      z-index:0;
+    }
+    
+    body > *{
+      position:relative;
+      z-index:1;
+    }
+
+    @media (max-width: 600px){
+      .hero::before{
+        background-position: 50% 10%;
+        background-size: min(420px, 90vw);
+        opacity: 0.06;
+      }
     }
 
     footer{
