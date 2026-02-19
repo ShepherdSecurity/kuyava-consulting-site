@@ -3,123 +3,335 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kuyava Consulting | Safety Training</title>
-  <meta name="description" content="OSHA 10 & OSHA 30 training, safety policies, manuals, posters, and consulting." />
+  <title>Kuyava Consulting | OSHA 10 & OSHA 30 Safety Training</title>
+  <meta name="description" content="OSHA 10 & OSHA 30 training, safety policies, programs, manuals, posters, and consulting." />
+
   <style>
-    :root { --max: 980px; }
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.5; color:#111; }
-    header { padding:56px 20px; background:#f6f7f9; border-bottom:1px solid #e6e8ee; }
-    main { padding:28px 20px 64px; }
-    .wrap { max-width: var(--max); margin:0 auto; }
-    .hero { display:grid; gap:16px; }
-    h1 { margin:0; font-size: clamp(28px, 4vw, 44px); line-height:1.1; }
-    p { margin:0; font-size: 18px; color:#222; }
-    .cta { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
-    .btn { display:inline-block; padding:12px 16px; border-radius:10px; border:1px solid #111; text-decoration:none; font-weight:600; }
-    .btn.primary { background:#111; color:#fff; }
-    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top:22px; }
-    .card { border:1px solid #e6e8ee; border-radius:14px; padding:18px; background:#fff; }
-    .card h3 { margin:0 0 8px; font-size:18px; }
-    .card ul { margin:0; padding-left:18px; }
-    .section { margin-top:34px; }
-    .section h2 { margin:0 0 10px; font-size:22px; }
-    footer { border-top:1px solid #e6e8ee; padding:22px 20px; color:#444; }
-    .small { font-size:14px; color:#555; }
-    .contact { display:grid; gap:10px; }
-    .pill { display:inline-block; padding:6px 10px; border:1px solid #e6e8ee; border-radius:999px; font-size:13px; background:#fff; }
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a30;
+      --text:#0b0f19;
+      --muted:#4b5563;
+      --line:#e5e7eb;
+      --soft:#f6f7fb;
+      --max:1080px;
+      --r:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:#ffffff;
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      background:rgba(255,255,255,.85);
+      backdrop-filter:saturate(180%) blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar .row{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background:#111}
+    nav{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{
+      text-decoration:none;
+      color:#111;
+      font-weight:600;
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    nav a:hover{background:var(--soft)}
+    .hero{
+      background: radial-gradient(1200px 500px at 20% -10%, #dbeafe 0, rgba(219,234,254,0) 60%),
+                  radial-gradient(900px 450px at 90% 0%, #fee2e2 0, rgba(254,226,226,0) 55%),
+                  linear-gradient(#ffffff, #ffffff);
+      border-bottom:1px solid var(--line);
+      padding:54px 0 34px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+    }
+    h1{
+      margin:0;
+      font-size:clamp(30px, 4vw, 48px);
+      line-height:1.06;
+      letter-spacing:-.6px;
+    }
+    .lead{
+      margin:14px 0 0;
+      font-size:18px;
+      color:#111827;
+      max-width:62ch;
+    }
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.75);
+      font-size:13px;
+      color:#111;
+      font-weight:600;
+      width:max-content;
+    }
+    .cta{
+      margin-top:18px;
+      display:flex; gap:12px; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid #111;
+      text-decoration:none;
+      font-weight:800;
+      font-size:14px;
+    }
+    .btn.primary{background:#111; color:#fff}
+    .btn.ghost{background:#fff}
+    .btn:hover{transform:translateY(-1px)}
+    .panel{
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      background:rgba(255,255,255,.7);
+      padding:18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+    .panel h3{margin:0 0 8px; font-size:15px; letter-spacing:.2px}
+    .panel p{margin:0; color:var(--muted); font-size:14px}
+    .stats{
+      margin-top:12px;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:10px;
+    }
+    .stat{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      background:#fff;
+    }
+    .stat b{display:block; font-size:18px}
+    .stat span{color:var(--muted); font-size:13px}
+
+    main{padding:34px 0 72px}
+    .section{margin-top:26px}
+    .section h2{margin:0 0 10px; font-size:22px; letter-spacing:-.2px}
+    .section p.desc{margin:0 0 14px; color:var(--muted); max-width:70ch}
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 980px){ .cards{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      padding:18px;
+      background:#fff;
+      box-shadow: 0 8px 26px rgba(0,0,0,.05);
+    }
+    .card h3{margin:0 0 6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+    .list{margin:10px 0 0; padding-left:18px; color:#374151}
+    .list li{margin:6px 0}
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 980px){ .split{grid-template-columns:1fr} }
+
+    .contact{
+      display:grid;
+      gap:10px;
+    }
+    .field{
+      display:flex; gap:10px; flex-wrap:wrap;
+      font-size:14px;
+      color:#111;
+    }
+    .badge{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--soft);
+      border:1px solid var(--line);
+      font-weight:700;
+      font-size:12px;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:22px 0;
+      color:#6b7280;
+      font-size:13px;
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="wrap hero">
-      <span class="pill">OSHA 10 • OSHA 30 • Safety Programs</span>
-      <h1>Practical safety training & programs that crews actually use.</h1>
-      <p>
-        Kuyava Consulting provides OSHA 10 & OSHA 30 training, company safety policies,
-        training programs, manuals, posters, and consulting—built on 30+ years of production management experience.
-      </p>
-      <div class="cta">
-        <a class="btn primary" href="#contact">Request a Quote</a>
-        <a class="btn" href="#services">View Services</a>
+  <div class="topbar">
+    <div class="wrap row">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Kuyava Consulting</span>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="pill">OSHA 10 • OSHA 30 • Safety Programs</div>
+        <h1>Safety training & documentation that teams actually follow.</h1>
+        <p class="lead">
+          Instructor-led OSHA 10 & OSHA 30 training, plus company policies, manuals, posters, and customized programs—
+          built from 30+ years of production management experience.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Request a Quote</a>
+          <a class="btn ghost" href="#services">View Services</a>
+        </div>
       </div>
 
-      <div class="grid">
-        <div class="card">
-          <h3>Training</h3>
-          <ul>
-            <li>OSHA 10</li>
-            <li>OSHA 30</li>
-            <li>Company-specific onboarding & refreshers</li>
-          </ul>
+      <aside class="panel">
+        <h3>What you can expect</h3>
+        <p>Clear, practical training and materials designed for real job sites and real workflows.</p>
+        <div class="stats">
+          <div class="stat">
+            <b>OSHA 10 / 30</b>
+            <span>Training sessions</span>
+          </div>
+          <div class="stat">
+            <b>Programs</b>
+            <span>Policies + procedures</span>
+          </div>
+          <div class="stat">
+            <b>Materials</b>
+            <span>Manuals, posters, toolbox talks</span>
+          </div>
+          <div class="stat">
+            <b>Consulting</b>
+            <span>As-needed support</span>
+          </div>
         </div>
-        <div class="card">
-          <h3>Programs & Documentation</h3>
-          <ul>
-            <li>Safety policies & written programs</li>
-            <li>Procedures & manuals</li>
-            <li>Posters, toolbox talks, quick guides</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Consulting</h3>
-          <ul>
-            <li>Program assessments & gap analysis</li>
-            <li>Documentation updates</li>
-            <li>Ongoing support as needed</li>
-          </ul>
-        </div>
-      </div>
+      </aside>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="section" id="services">
-      <h2>Services</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>OSHA 10 & OSHA 30 Training</h3>
-          <p class="small">Instructor-led sessions designed to be clear, practical, and job-relevant.</p>
-        </div>
-        <div class="card">
-          <h3>Company Policies & Training Programs</h3>
-          <p class="small">Written policies, procedures, and programs tailored to your workplace and operations.</p>
-        </div>
-        <div class="card">
-          <h3>Manuals, Posters & Materials</h3>
-          <p class="small">Safety manuals, posters, toolbox talks, and ongoing reinforcement resources.</p>
-        </div>
-        <div class="card">
-          <h3>Consulting Support</h3>
-          <p class="small">One-time projects or ongoing consulting to strengthen safety culture and compliance.</p>
-        </div>
-      </div>
-    </section>
+  <main>
+    <div class="wrap">
 
-    <section class="section" id="about">
-      <h2>About</h2>
-      <div class="card">
-        <p class="small">
-          Kuyava Consulting is led by a safety professional with 30+ years of production management experience.
-          She has spent years developing safety training procedures, manuals, and documentation, collaborating
-          with compliance teams and OSHA-focused consultants to build programs that work in the real world.
-        </p>
-      </div>
-    </section>
+      <section class="section" id="services">
+        <h2>Services</h2>
+        <p class="desc">Choose one service or combine them into a complete safety program.</p>
 
-    <section class="section" id="contact">
-      <h2>Contact</h2>
-      <div class="card contact">
-        <p class="small">To request a quote or schedule training, contact:</p>
-        <p class="small"><strong>Email:</strong> you@example.com</p>
-        <p class="small"><strong>Phone:</strong> (555) 555-5555</p>
-        <p class="small"><strong>Service area:</strong> Add location / remote options here</p>
-        <p class="small">Tip: Replace the email/phone above and you’re live.</p>
-      </div>
-    </section>
+        <div class="cards">
+          <div class="card">
+            <h3>OSHA 10 & OSHA 30 Training</h3>
+            <p>Instructor-led training tailored to your industry and crew experience level.</p>
+            <ul class="list">
+              <li>On-site or scheduled sessions</li>
+              <li>Job-relevant examples</li>
+              <li>Clear takeaways for supervisors and workers</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Company Policies & Training Programs</h3>
+            <p>Written programs and procedures that match how your teams actually work.</p>
+            <ul class="list">
+              <li>Policy creation or updates</li>
+              <li>New-hire onboarding content</li>
+              <li>Refresher training programs</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Manuals, Posters & Safety Materials</h3>
+            <p>Practical materials to reinforce safety every day.</p>
+            <ul class="list">
+              <li>Safety manuals and SOPs</li>
+              <li>Posters and quick guides</li>
+              <li>Toolbox talks</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <h2>About</h2>
+        <div class="split">
+          <div class="card">
+            <h3>Real-world experience</h3>
+            <p>
+              Kuyava Consulting is led by a safety professional with 30+ years of production management experience.
+              She has spent years developing safety training procedures, manuals, and documentation—collaborating with
+              compliance teams and OSHA-focused consultants to build programs that are clear, usable, and effective.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Practical, not theoretical</h3>
+            <p>
+              The goal is simple: improve safety outcomes while keeping training and documentation easy to understand,
+              easy to apply, and aligned with what OSHA expects.
+            </p>
+            <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+              <span class="badge">Manufacturing</span>
+              <span class="badge">Construction</span>
+              <span class="badge">Warehousing</span>
+              <span class="badge">General Industry</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p class="desc">Request a quote, schedule training, or ask about documentation and program support.</p>
+
+        <div class="card contact">
+          <div class="field"><strong>Email:</strong> <span>you@example.com</span></div>
+          <div class="field"><strong>Phone:</strong> <span>(555) 555-5555</span></div>
+          <div class="field"><strong>Service area:</strong> <span>Add location / remote options</span></div>
+          <div class="field"><strong>Preferred:</strong> <span>Email for fastest response</span></div>
+          <p style="margin:8px 0 0; color:var(--muted); font-size:13px;">
+            Replace the contact details above and commit the change — Cloudflare will redeploy automatically.
+          </p>
+        </div>
+      </section>
+
+    </div>
   </main>
 
   <footer>
-    <div class="wrap small">© <span id="y"></span> Kuyava Consulting. All rights reserved.</div>
+    <div class="wrap">© <span id="y"></span> Kuyava Consulting. All rights reserved.</div>
   </footer>
 
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
