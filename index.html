@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kuyava Consulting | Safety Training</title>
+  <meta name="description" content="OSHA 10 & OSHA 30 training, safety policies, manuals, posters, and consulting." />
+  <style>
+    :root { --max: 980px; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.5; color:#111; }
+    header { padding:56px 20px; background:#f6f7f9; border-bottom:1px solid #e6e8ee; }
+    main { padding:28px 20px 64px; }
+    .wrap { max-width: var(--max); margin:0 auto; }
+    .hero { display:grid; gap:16px; }
+    h1 { margin:0; font-size: clamp(28px, 4vw, 44px); line-height:1.1; }
+    p { margin:0; font-size: 18px; color:#222; }
+    .cta { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:12px 16px; border-radius:10px; border:1px solid #111; text-decoration:none; font-weight:600; }
+    .btn.primary { background:#111; color:#fff; }
+    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top:22px; }
+    .card { border:1px solid #e6e8ee; border-radius:14px; padding:18px; background:#fff; }
+    .card h3 { margin:0 0 8px; font-size:18px; }
+    .card ul { margin:0; padding-left:18px; }
+    .section { margin-top:34px; }
+    .section h2 { margin:0 0 10px; font-size:22px; }
+    footer { border-top:1px solid #e6e8ee; padding:22px 20px; color:#444; }
+    .small { font-size:14px; color:#555; }
+    .contact { display:grid; gap:10px; }
+    .pill { display:inline-block; padding:6px 10px; border:1px solid #e6e8ee; border-radius:999px; font-size:13px; background:#fff; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <span class="pill">OSHA 10 • OSHA 30 • Safety Programs</span>
+      <h1>Practical safety training & programs that crews actually use.</h1>
+      <p>
+        Kuyava Consulting provides OSHA 10 & OSHA 30 training, company safety policies,
+        training programs, manuals, posters, and consulting—built on 30+ years of production management experience.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Request a Quote</a>
+        <a class="btn" href="#services">View Services</a>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Training</h3>
+          <ul>
+            <li>OSHA 10</li>
+            <li>OSHA 30</li>
+            <li>Company-specific onboarding & refreshers</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Programs & Documentation</h3>
+          <ul>
+            <li>Safety policies & written programs</li>
+            <li>Procedures & manuals</li>
+            <li>Posters, toolbox talks, quick guides</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Consulting</h3>
+          <ul>
+            <li>Program assessments & gap analysis</li>
+            <li>Documentation updates</li>
+            <li>Ongoing support as needed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section" id="services">
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>OSHA 10 & OSHA 30 Training</h3>
+          <p class="small">Instructor-led sessions designed to be clear, practical, and job-relevant.</p>
+        </div>
+        <div class="card">
+          <h3>Company Policies & Training Programs</h3>
+          <p class="small">Written policies, procedures, and programs tailored to your workplace and operations.</p>
+        </div>
+        <div class="card">
+          <h3>Manuals, Posters & Materials</h3>
+          <p class="small">Safety manuals, posters, toolbox talks, and ongoing reinforcement resources.</p>
+        </div>
+        <div class="card">
+          <h3>Consulting Support</h3>
+          <p class="small">One-time projects or ongoing consulting to strengthen safety culture and compliance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p class="small">
+          Kuyava Consulting is led by a safety professional with 30+ years of production management experience.
+          She has spent years developing safety training procedures, manuals, and documentation, collaborating
+          with compliance teams and OSHA-focused consultants to build programs that work in the real world.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="card contact">
+        <p class="small">To request a quote or schedule training, contact:</p>
+        <p class="small"><strong>Email:</strong> you@example.com</p>
+        <p class="small"><strong>Phone:</strong> (555) 555-5555</p>
+        <p class="small"><strong>Service area:</strong> Add location / remote options here</p>
+        <p class="small">Tip: Replace the email/phone above and you’re live.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap small">© <span id="y"></span> Kuyava Consulting. All rights reserved.</div>
+  </footer>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
